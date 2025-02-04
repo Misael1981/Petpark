@@ -1,0 +1,194 @@
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-m);
+    padding-bottom: var(--padding-xxl);
+}
+
+.menu-mobile {
+    display: none;
+}
+
+.alinhamento-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: var(--padding-l);
+    
+    @media screen and (max-width: 568px) {
+
+        .menu-mobile {
+            display: block;
+            width: 1.7rem;
+            height: 1.7rem;
+        }
+
+        .alinhamento-cabecalho__image {
+            flex: 1 1 100%;
+            display: flex;
+            justify-content: center;
+            padding-bottom: var(--padding-xl);
+        }
+    }
+}
+
+.label-busca {
+    display: flex;
+    flex-grow: 0.5;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--cor-neutra-dark);
+    padding: var(--padding-s) var(--padding-m);
+    border-radius: 2rem;
+
+    @media screen and (max-width: 568px) {
+        width: 100%;
+    }
+    @media screen and (max-width: 768px) {
+        order: 1;
+        width: 90%;
+        margin-top: var(--margin-xl);
+    }
+}
+
+.label-busca input {
+    border: none;
+    outline: none;
+}
+
+.icone-busca {
+    display: flex;
+    align-items: center;
+
+    &::after {
+        content: "";
+        position: relative;
+        background-image: url('../icones/busca.png');
+        background-repeat: no-repeat;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.botao-login {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-s);
+}
+
+.navegacao {
+    align-content: center;
+}
+
+.menu-lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: var(--margin-m) 0;
+
+    @media screen and (max-width: 568px) {
+        flex-direction: column;
+        align-items: start;
+        justify-content: flex-start;
+        background-color: var(--cor-primaria-bg-menu);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: 150px;
+        left: 0;
+        width: 100vw;
+        height: 0;
+        border-bottom: 10px solid var(--cor-primaria-dark);
+        transition: .8s;
+        visibility: hidden;
+        overflow: hidden;
+
+        &.open {
+            visibility: visible;
+            height: 35vh;
+        }
+    }
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--cor-neutra-dark);
+    position: relative;
+    padding: var(--padding-xs);
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 4px;
+        background-color: var(--cor-neutra-dark);
+        transition: width 0.3s ease;
+    }
+
+    @media screen and (max-width: 568px) {
+        
+        padding: 1rem;
+        display: block;
+        font-size: 1.5rem;
+        color: var(--cor-primaria-dark);
+    }
+}
+
+.menu-link:hover::after,
+.menu-link:focus::after {
+    width: 100%;
+} 
+
+/* === MENU MOBILE === */
+
+.btn__menu-mobile {
+
+    #btn-menu {
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid var(--cor-neutra-dark);
+        background: transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+
+        @media screen and (max-width: 568px) {
+            display: block;
+        }
+    }
+    .line {
+        position: relative;
+        height: 2.5px;
+        width: 1.6rem;
+        background-color: var(--cor-neutra-dark);
+        display: block;
+        transform-origin: center;
+        margin: 0.3rem auto;
+        transition: .5s;
+    }
+}
+
+#btn-menu.active {
+    border-color: var(--cor-primaria-dark);
+    box-shadow: 0px 3px 10px var(--cor-primaria-bg-menu)
+}
+
+#btn-menu.active .line:nth-child(1) {
+    transform: translatey(6px) rotate(-40deg);
+    background-color: var(--cor-primaria-dark);
+}
+
+#btn-menu.active .line:nth-child(2) {
+    transform: translatey(-2.5px) rotate(40deg);
+    background-color: var(--cor-primaria-dark);
+}
+
+#btn-menu.active .line:nth-child(3) {
+    width: 0;
+}
