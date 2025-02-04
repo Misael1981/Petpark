@@ -5,8 +5,12 @@
     align-items: center;
     gap: var(--gap-xl);
     background-color: var(--cor-secundaria-light);
-    width: 100%;
+    /* width: 100%; */
     padding: var(--padding-5xl) 0;
+
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 .ofertas-titulo {
@@ -17,6 +21,12 @@
     display: flex;
     gap: var(--gap-l);
     overflow: hidden;
+    
+    @media screen and (max-width: 568px) {
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; 
+        
+    }
 }
 
 .carrossel-item {
@@ -29,8 +39,14 @@
     text-align: center;
     gap: var(--gap-m);
 
+    scroll-snap-align: start; 
+    flex-shrink: 0; 
+    width: 300px; 
+    margin: 0 10px; 
+
     @media screen and (max-width: 568px) {
-        margin-left: 12%;
+        width: 95%; 
+        margin: 0; 
     }
 }
 

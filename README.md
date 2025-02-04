@@ -27,7 +27,7 @@ O projeto utiliza as seguintes tecnologias e bibliotecas:
 
 ## 📲 Deploy do Projeto
 
-- ### [Entre e de uma olhadinha]()
+- ### [Entre e de uma olhadinha](https://petpark-xi.vercel.app/)
 
 
 Gostou do projeto e quer conhecer mais?
